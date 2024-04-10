@@ -2,38 +2,70 @@
 <html>
 
 <head>
-    <title>LA TV Shows | Home</title>
+    <title>CarsCollective| Home</title>
+    <link rel="shortcut icon" type="image/x-icon" href="tabIcon.ico" />
     <meta name="description" content="A Catalog of Shows Set in Los Angeles">
     <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/7c8801c017.js" crossorigin="anonymous"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqRJzyUarVDlXrHa_m7Naq8jaM7pt6mm8&callback=console.debug&libraries=maps,marker&v=beta"></script>
     <script type="text/javascript" src="scripts.js"></script>
 </head>
 
 <body>
-    <header class="main-header">
-        <h1 class="title">LA TV Shows</h1>
+    <header class="main-header">     
+        <div class="header-section" id="left-header-section">
+            <button id="toggleViewButton" class="view-toggle-btn">Toggle View</button>
+        </div>
+
+        <div class="header-section" id="center-header-section">
+            <h1 class="title">Cars Collective</h1>
+        </div>
+
+        <div class="header-section" id="right-header-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search cars...">
+                <button id="searchButton" class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
     </header>
-    <div id="card-container">
-        
-    </div>
+
+    </header>
+    <div id="card-container"></div>
     <div class="card" style="display: none;">
         <div class="card-content">
-            <h2>TV Show Title</h2>
-            <img src="" alt="TV Show Poster">
-            <ul>
-                <li>Bullet Point 1</li>
-                <li>Bullet Point 2</li>
-                <li>Bullet Point 3</li>
+            <h2>Type of car</h2>
+            <img src="" alt="Car">
+            <ul class="button-list">
+                <button class="button-style tiktok" onclick="toggleTikTokEmbed();">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span class="icon-circle"></span>View Video
+                </button>
+
+                <button class="button-style map" onclick="toggleGoogleMapsEmbed();">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span class="icon-circle"></span>View Location
+                </button>
             </ul>
+
         </div>
     </div>
-    <div class="footer">
-        <button onclick="quoteAlert();">
-            Get A Quote!
-        </button>
-        <button onclick="removeLastCard();">
-            Remove A Card!
-        </button>
-    </div>
-</body>
 
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeTiktokModal()">X</span>
+            <iframe id="tiktokVideoFrame" src="" frameborder="0" ></iframe>
+        </div>
+    </div>
+
+    <div id="mapModal" class="modal" style= "display: none;">
+        <div class="car-modal-content">
+            <span class="close" onclick="closeMapModal()">X</span>
+            <iframe id="googleMapsFrame" src="" frameborder="0" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <div class="footer"></div>
+</body>
 </html>

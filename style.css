@@ -1,35 +1,132 @@
-html,
-body {
+html, body {
     margin: 0;
     padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    padding-top: 70px;
+    background-color: #3e4043;
 }
 
 .main-header {
-    background-color: rgba(0, 0, 0, .3);
-    padding-bottom: 10px;
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.header-section {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+}
+
+#left-header-section {
+    justify-content: flex-start;
+}
+
+#right-header-section {
+    justify-content: flex-end; 
+}
+
+.title {
+    margin: 0; 
+}
+
+.header-content {
+    width: 100%; 
+    max-width: 1200px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 20px; 
+}
+
+.view-toggle-btn {
+    margin-left: 20px; 
+    background-color: #777;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer; 
+    padding: 10px 20px; 
+}
+
+.view-toggle-btn:hover {
+    background-color: #0056b3;
+}
+
+#card-container.list-view .card {
+    max-width: 50%;
+}
+
+.search-box {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.search-box input[type="text"] {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+}
+
+.search-btn {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #777;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+    outline: none;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
 
 .title {
     text-align: center;
     margin: 0;
-    font-size: 8em;
-    font-family: "Helvetica";
-    font-weight: normal;
-    color: white;
+    font-size: 12px;
+    color: #ffffff;
+    text-shadow: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 #card-container {
     display: flex;
+    flex-wrap: wrap; 
     justify-content: center;
     margin: 20px;
 }
 
-.card {
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 5px;
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-content ul {
+    display: none;
+}
+
+.card:hover .card-content ul {
+    display: block; 
 }
 
 .card-content {
@@ -41,11 +138,112 @@ body {
 .card-content h2 {
     margin-top: 0;
     font-size: 20px;
+    color: #fefefe;
 }
+
+.card {
+    border: 1px solid #ffffff;
+    background-color: #777;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
 
 .card img {
     width: 100%;
     height: auto;
+    display: block;
+    border: 1px solid #ffffff; 
+    border-radius: 15px;
+}
+
+.button-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.button-style {
+    display: block;
+    width: 100%; 
+    margin: 5px 0; 
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff; 
+    border: none;
+    border-radius: 20px;
+    text-align: left; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative; 
+}
+
+.button-style i {
+    margin-right: 8px; 
+    color: #ffffff; 
+}
+
+.button-style:hover {
+    background-color: #1c4d7e; 
+}
+
+.modal{
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    backdrop-filter: blur(8px); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 400px; 
+    border-radius: 15px;
+}
+
+.car-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 800px; 
+    border-radius: 15px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+iframe {
+    width: 100%;
+    height: 95vh;
+    border-radius: 15px;
 }
 
 .footer {
@@ -53,18 +251,4 @@ body {
     justify-content: center;
     background-color: rgba(0, 0, 0, .3);
     padding: 10px;
-}
-
-button {
-    text-align: center;
-    background-color: #666;
-    border: none;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 40px;
-    border-radius: 10px;
-    color: white;
-    font-size: 22px;
-    cursor: pointer;
-    margin: 5px;
 }
