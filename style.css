@@ -215,6 +215,7 @@ body {
     width: 80%; 
     max-width: 400px; 
     border-radius: 15px;
+    max-height: 800px;
 }
 
 .car-modal-content {
@@ -223,8 +224,9 @@ body {
     padding: 20px;
     border: 1px solid #888;
     width: 80%; 
-    max-width: 800px; 
+    max-width: 400px; 
     border-radius: 15px;
+    max-height: 800px;
 }
 
 .close {
