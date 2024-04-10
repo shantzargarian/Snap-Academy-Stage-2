@@ -7,6 +7,7 @@ html, body {
 body {
     padding-top: 70px;
     background-color: #3e4043;
+    transition: background-color 0.3s;
 }
 
 .main-header {
@@ -21,12 +22,17 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: padding 0.3s;
 }
 
 .header-section {
     flex: 1; 
     display: flex;
     justify-content: center;
+}
+
+.title {
+    font-size: 22px !important;
 }
 
 #left-header-section {
@@ -108,6 +114,7 @@ body {
     text-shadow: #1a1a1a;
     text-transform: uppercase;
     letter-spacing: 2px;
+    transition: color 0.3s;
 }
 
 #card-container {
@@ -115,14 +122,16 @@ body {
     flex-wrap: wrap; 
     justify-content: center;
     margin: 20px;
+    transition: transform 0.3s;
 }
 
 .card:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); 
 }
 
 .card-content ul {
-    display: none;
+    display: block;
 }
 
 .card:hover .card-content ul {
@@ -151,8 +160,8 @@ body {
     display: flex;
     flex-direction: column;
     max-width: 300px;
+    transition: all 0.3s ease-in-out;
 }
-
 
 .card img {
     width: 100%;
@@ -160,12 +169,15 @@ body {
     display: block;
     border: 1px solid #ffffff; 
     border-radius: 15px;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .button-list {
     list-style: none;
     padding: 0;
     margin: 10px 0;
+    display: flex; 
+    justify-content: space-around;
 }
 
 .button-style {
@@ -174,6 +186,8 @@ body {
     margin: 5px 0; 
     padding: 10px;
     font-size: 16px;
+    width: auto; /* Adjust width to content */
+    margin: 5px; /* Small margin for separation */
     color: #ffffff;
     background-color: #007bff; 
     border: none;
@@ -182,11 +196,13 @@ body {
     cursor: pointer;
     transition: background-color 0.3s;
     position: relative; 
+    text-decoration: none; 
 }
 
 .button-style i {
     margin-right: 8px; 
     color: #ffffff; 
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .button-style:hover {
@@ -205,6 +221,7 @@ body {
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
     backdrop-filter: blur(8px); 
+    transition: all 0.3s; 
 }
 
 .modal-content {
@@ -216,6 +233,7 @@ body {
     max-width: 400px; 
     border-radius: 15px;
     max-height: 800px;
+    transition: margin 0.3s, width 0.3s;
 }
 
 .car-modal-content {
@@ -234,6 +252,7 @@ body {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 .close:hover, .close:focus {

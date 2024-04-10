@@ -109,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleViewButton.addEventListener('click', function() {
         cardContainer.classList.toggle('list-view');
 
-        // Update the button text based on the current view
         if (cardContainer.classList.contains('list-view')) {
             toggleViewButton.textContent = 'Grid View';
         } else {
@@ -118,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
 function showCards() {
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = "";
@@ -126,7 +124,7 @@ function showCards() {
 
     carData.forEach(car => {
         const nextCard = templateCard.cloneNode(true);
-        editCardContent(nextCard, car.title, car.imageUrl, car.videoId, car.coordinates);
+        editCardContent(nextCard, car.title, car.imageUrl, car.videoId, car.coordinates, car.description); // Pass the description here
         cardContainer.appendChild(nextCard);
     });
 }
